@@ -365,7 +365,7 @@ export default function Home() {
         <AnimatedTimeline events={Roadmap}></AnimatedTimeline>
       </SlideIn>
 
-      <div className="flex flex-col">
+      <div id="about" className="flex flex-col">
         <SlideIn className="" direction="left">
           <h1 className=" mb-20 font-semibold text-5xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
             Миссия и ценности

@@ -43,7 +43,7 @@ const links: NavLink[] = [
   // },
   {
     name: "О КОМПАНИИ",
-    href: "/about",
+    href: "/#about",
   
   },
   {
