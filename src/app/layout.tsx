@@ -45,18 +45,18 @@ const involve = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.buro1189.ru"),
   title: {
-    template: "%s | Цифровая Кафедра ПРОМТЕХДИЗАЙН",
-    default: ` Цифровая Кафедра ПРОМТЕХДИЗАЙН`,
+    template: "%s | Бюро 1189",
+    default: ` Бюро 1189`,
   },
   alternates: { canonical: "./" },
   description:
-    "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
+    "Добро пожаловать на сайт Бюро 1189",
   openGraph: {
-    title: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
+    title: "Бюро 1189",
     description:
-      "Добро пожаловать на официальный сайт Цифровой кафедры ПРОМТЕХДИЗАЙН",
-    url: "https://www.cksutd.ru",
-    siteName: "Цифровая кафедра ПРОМТЕХДИЗАЙН",
+      "Добро пожаловать на сайт Бюро 1189",
+    url: "https://www.buro1189.ru",
+    siteName: "Бюро 1189",
     images: [
       {
         url: "/opengraph-image.png",
@@ -81,7 +81,7 @@ export default function RootLayout({
         <head>
           <meta
             name="apple-mobile-web-app-title"
-            content="Цифровая кафедра ПРОМТЕХДИЗАЙН"
+            content="Бюро 1189"
           />
           <meta
             name="viewport"

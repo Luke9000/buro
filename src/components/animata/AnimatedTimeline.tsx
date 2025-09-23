@@ -1,13 +1,14 @@
 "use client";
 
+import { HexNutSVG as HexNut } from "./HexNut";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import type React from "react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
 export interface TimelineEvent {
-  id: string;
-  title: string;
+  id: number;
+  text: string;
   description?: string;
   date?: string;
   [key: string]: unknown; // Allow additional custom fields
@@ -70,56 +71,61 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           style={{ backgroundColor: styles.lineColor }}
         >
           <motion.div
-            className="w-full origin-top"
+            className="w-full origin-top mt-1"
             animate={{ scaleY: isActive ? 1 : 0 }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
             style={{ height: "100%", backgroundColor: styles.activeLineColor }}
           />
         </div>
-        <motion.div  className="relative z-0 rounded-full border-4 bg-background"
+        {/* <motion.div
+          className="relative z-0 rounded-full border-4 bg-background"
           style={{ width: styles.dotSize, height: styles.dotSize }}
           animate={{
             borderColor: isActive ? styles.activeDotColor : styles.dotColor,
             backgroundColor: isActive ? styles.activeDotColor : "background",
           }}
-          transition={{ duration: 0.3, ease: "easeOut" }}>
-         
-        </motion.div>
-           
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        ></motion.div> */}
+          <HexNut
+            className="z-10"
+            size={styles.dotSize}
+            isActive={isActive}
+            dotColor={styles.dotColor}
+            activeDotColor={styles.activeDotColor}
+          />
       </div>
 
       <div
-        className={cn(
-          "md:hidden w-fit leading-5 ",
-          isLast && "border-accent-higher border-2 p-4 rounded-xl"
-        )}
+        className="md:hidden w-fit leading-5 -mt-1"
+
+        // isLast && "border-accent-higher border-2 p-4 rounded-xl
       >
         <h3
-          className="text-base font-semibold"
+          className="text-base font-regular "
           style={{ color: styles.titleColor }}
         >
-          {event.title}
+          {event.text}
         </h3>
         <p className="text-sm">{event.description}</p>
         <p className="text-xs/6 font-semibold">{event.exam}</p>
       </div>
 
       {/* Десктопная версия */}
-      <div className="hidden md:flex w-full items-center min-h-16">
+      <div className="hidden md:flex w-full items-start min-h-20">
         {/* Левая сторона */}
-        <div className="flex-1 pr-8 ">
+        <div className="flex-1 pr-8 -mt-1">
           {isEven && (
             <div
               className={cn(
-                "text-right max-w-64 ml-auto",
-                isLast && "border-accent-higher border-3 p-4 rounded-xl w-fit"
+                "text-right max-w-64 ml-auto flex",
+                isLast && "border-accent-higher border-3 p-4 rounded-xl w-fit "
               )}
             >
               <h3
-                className="text-base font-semibold"
+                className="text-base font-regular"
                 style={{ color: styles.titleColor }}
               >
-                {event.title}
+                {event.text}
               </h3>
               <p className="text-sm">{event.description}</p>
               <p className="text-xs/6 font-semibold">{event.exam}</p>
@@ -139,7 +145,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             }}
           >
             <motion.div
-              className="w-full origin-top"
+              className="w-full origin-top mt-1"
               animate={{ scaleY: isActive ? 1 : 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
               style={{
@@ -149,7 +155,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             />
           </div>
 
-          <motion.div
+          {/* <motion.div
             className="relative z-10 rounded-full border-4 bg-background"
             style={{ width: styles.dotSize, height: styles.dotSize }}
             animate={{
@@ -157,6 +163,13 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
               backgroundColor: isActive ? styles.activeDotColor : "background",
             }}
             transition={{ duration: 0.3, ease: "easeOut" }}
+          /> */}
+          <HexNut
+            className="z-10"
+            size={styles.dotSize}
+            isActive={isActive}
+            dotColor={styles.dotColor}
+            activeDotColor={styles.activeDotColor}
           />
         </div>
 
@@ -164,16 +177,15 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
         <div className="flex-1 pl-8 ">
           {!isEven && (
             <div
-              className={cn(
-                "text-left max-w-64",
-                isLast && "border-accent-higher border-3 p-4 rounded-xl w-fit"
-              )}
+              className="text-left max-w-64"
+
+              //  isLast && "border-accent-higher border-3 p-4 rounded-xl w-fit"
             >
               <h3
-                className="text-base font-semibold"
+                className="text-base font-regular -mt-1"
                 style={{ color: styles.titleColor }}
               >
-                {event.title}
+                {event.text}
               </h3>
               <p className="text-sm">{event.description}</p>
               <p className="text-xs/6 font-semibold">{event.exam}</p>
@@ -273,6 +285,15 @@ export function AnimatedTimeline({
 
   return (
     <div className={`relative py-4 ${className}`}>
+      <h3 className="opacity-70 absolute left-1/2 -z-10 -translate-x-1/2 -translate-y-1/3 font-semibold text-9xl text-contrast-lower2">
+        2026
+      </h3>
+      <h3 className="opacity-70 absolute top-1/2 left-1/2 -z-10 mt-10 -translate-y-full  -translate-x-1/2 font-semibold text-9xl text-contrast-lower2">
+        2027
+      </h3>
+      <h3 className="opacity-70 absolute bottom-0 left-1/2 -z-10 -translate-y-1/3  -translate-x-1/2 font-semibold text-9xl text-contrast-lower2">
+        2028
+      </h3>
       {events.map((event, index) => (
         <div key={event.id} onClick={() => onEventClick?.(event)}>
           <TimelineItem
@@ -307,52 +328,52 @@ export default function AnimatedTimelinePage({
   customEventRender,
   onEventClick,
 }: AnimatedTimelinePageProps) {
-  const DefaultEvents = [
+  const DefaultEvents: TimelineEvent[] = [
     {
-      id: "1",
-      title: "Project Started",
+      id: 1,
+      text: "Project Started",
       description: "Initial planning and setup phase",
       date: "January 2024",
     },
     {
-      id: "2",
-      title: "Development Phase",
+      id: 2,
+      text: "Development Phase",
       description: "Core features implementation",
       date: "March 2024",
     },
     {
-      id: "3",
-      title: "Testing & QA",
+      id: 3,
+      text: "Testing & QA",
       description: "Comprehensive testing and bug fixes",
       date: "May 2024",
     },
     {
-      id: "4",
-      title: "Beta Release",
+      id: 4,
+      text: "Beta Release",
       description: "Limited release to beta testers",
       date: "July 2024",
     },
     {
-      id: "5",
-      title: "Production Launch",
+      id: 5,
+      text: "Production Launch",
       description: "Full public release",
       date: "September 2024",
     },
     {
-      id: "6",
-      title: "Feature Updates",
+      id: 6,
+      text: "Feature Updates",
       description: "Ongoing improvements and new features",
       date: "November 2024",
     },
     {
-      id: "7",
-      title: "Mobile App Launch",
+      id: 7,
+      text: "Mobile App Launch",
       description: "Released companion mobile application",
       date: "December 2024",
     },
     {
-      id: "8",
-      title: "International Expansion",
+      id: 8,
+      text: "International Expansion",
       description: "Expanded to European markets",
       date: "February 2025",
     },

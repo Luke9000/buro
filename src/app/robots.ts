@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: '/private/',
     },
-    sitemap: 'https://www.cksutd.ru/sitemap.xml',
+    sitemap: 'https://www.buro1189.ru/sitemap.xml',
   }
 }

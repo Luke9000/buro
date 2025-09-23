@@ -16,7 +16,7 @@ const Index = () => {
 
   return (
     <Headroom>
-      <header className="bg-[var(--color-bg)] z-[9] w-full flex-row  items-center no-underline flex h-15 px-4 md:px-8 py-0 left-0 justify-between ">
+      <header className="bg-[var(--color-bg)] z-50 w-full flex-row  items-center no-underline flex h-15 px-4 md:px-8 py-0 left-0 justify-between ">
         <Link
           href="/"
           // className={clsx(

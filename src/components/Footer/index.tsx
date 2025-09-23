@@ -2,7 +2,7 @@ import LogoBW from "../icons/LogoBW";
 
 const index = () => {
   return (
-    <footer className="flex sm:flex-row flex-col  bg-contrast-higher text-contrast-lowest w-full px-2 sm:px-8 py-2 items-center text-center sm:text-start">
+    <footer className="py-6 flex sm:flex-row flex-col  bg-contrast-higher text-contrast-lowest w-full px-2 sm:px-8 sm:py-2 items-center text-center sm:text-start">
       <div className=" flex flex-col text-xs gap-4 sm:gap-1 w-full">
         <p className="  ">
           info@buro1189.ru
