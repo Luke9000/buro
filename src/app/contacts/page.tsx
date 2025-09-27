@@ -29,17 +29,30 @@ const page = () => {
             В здании
           </h3>
           <p className="text-contrast-lower2 text-sm pointer-events-auto font-regular">
-            1 подъезд, лестница справа от рекламного монитора, 3 этаж, стеклянные двери
+            1 подъезд, лестница справа от рекламного монитора, 3 этаж,
+            стеклянные двери
           </p>
         </div>
       </div>
-      <iframe
+      {/* <iframe
         title="Адрес на карте"
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2239.8823431697797!2d37.65501621276346!3d55.84735637300722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b536907a66ff47%3A0xaeb33d95913a047e!2z0JHQpiDQodC40LvRjNCy0LXRgCDQodGC0L7Rg9C9!5e0!3m2!1sru!2sru!4v1758617924022!5m2!1sru!2sru"
         className="w-full h-full"
         allowFullScreen
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
+      ></iframe> */}
+
+      <iframe
+        loading="lazy"
+        title="Адрес на карте"
+        src="https://yandex.ru/map-widget/v1/org/silver_stoun/152058280892/?indoorLevel=1&ll=37.658777%2C55.847172&z=16.57"
+        width="560"
+        height="400"
+        frameBorder="1"
+        className="w-full h-full"
+        allowFullScreen
+        // style="position:relative;"
       ></iframe>
     </div>
   );
