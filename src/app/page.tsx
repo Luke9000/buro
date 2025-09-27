@@ -11,7 +11,7 @@ import { TextLoop } from "components/motion-primitives/text-loop";
 import { Metadata } from "next";
 import rf from "public/rf.avif";
 import React from "react";
-import { Link } from "next-view-transitions";
+// import { Link } from "next-view-transitions";
 import { ValuesBlock } from "@/components/ValuesBlock";
 
 const Projects = [
