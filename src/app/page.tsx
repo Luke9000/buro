@@ -415,9 +415,9 @@ export default function Home() {
             ))}
           </div>
         </SlideIn>
-        <Link className="py-8 w-full text-right" href="/about">
+        {/* <Link className="py-8 w-full text-right" href="/about">
           <p className="text-contrast-low text-sm underline">Подробнее о компании</p>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
