@@ -44,7 +44,7 @@ const aboutData = [
   },
   {
     alt: "Большая часть наших объектов расположена в Москве",
-    src: IMAGE_PATH + "about/distant.avif",
+    src: IMAGE_PATH + "about/distant_2.avif",
     key: uuid(),
     children: (
       <p>
