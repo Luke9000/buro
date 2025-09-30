@@ -13,6 +13,8 @@ import rf from "public/rf.avif";
 import React from "react";
 // import { Link } from "next-view-transitions";
 import { ValuesBlock } from "@/components/ValuesBlock";
+import { Link } from "next-view-transitions";
+import { ParallaxImage } from "@/components/ParralaxImage";
 
 const Projects = [
   {
@@ -277,30 +279,25 @@ export default function Home() {
         </ul>
       </section>
 
-      <SlideIn duration={0.5} opacity={1}>
-        <section className="grid grid-cols-1 lg:grid-cols-2 -mx-8 gap-0.5 bg-contrast-medium">
-          {Projects.map((project) => (
-            <div key={project.key} className="w-full h-84 relative">
-              <Image
-                unoptimized
-                width={1200}
-                height={720}
-                className="object-cover h-full w-full brightness-25"
-                alt={project.title}
-                src={project.image}
-              ></Image>
-              <div className="absolute top-10 left-10 md:top-12 md:left-12 w-3/5 text-contrast-lowest">
-                <h1 className="text-2xl md:text-4xl font-semibold">
-                  {project.title}
-                </h1>
-                <p className="text-base/5 font-regular mt-7 text-contrast-lower2">
-                  {project.description}
-                </p>
-              </div>
+      <section className="grid grid-cols-1 lg:grid-cols-2 -mx-8 gap-0.5 bg-contrast-medium">
+        {Projects.map((project) => (
+          <div key={project.key} className="w-full h-84 relative">
+            <ParallaxImage
+              src={project.image}
+              alt={project.title}
+              className="brightness-25"
+            />
+            <div className="absolute top-10 left-10 md:top-12 md:left-12 w-3/5 text-contrast-lowest">
+              <h1 className="text-2xl md:text-4xl font-semibold">
+                {project.title}
+              </h1>
+              <p className="text-base/5 font-regular mt-7 text-contrast-lower2">
+                {project.description}
+              </p>
             </div>
-          ))}
-        </section>
-      </SlideIn>
+          </div>
+        ))}
+      </section>
 
       <SlideIn direction="right">
         <h1 className="mb-20 font-semibold text-5xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
@@ -415,9 +412,11 @@ export default function Home() {
             ))}
           </div>
         </SlideIn>
-        {/* <Link className="py-8 w-full text-right" href="/about">
-          <p className="text-contrast-low text-sm underline">Подробнее о компании</p>
-        </Link> */}
+        <Link className="py-8 w-full text-right" href="/about">
+          <p className="text-contrast-low text-sm underline">
+            Подробнее о компании
+          </p>
+        </Link>
       </div>
     </div>
   );

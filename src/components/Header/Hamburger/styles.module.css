@@ -192,5 +192,5 @@
 }
 
 .Item:has(.activeLink) {
-  background-color: #ff1010;
+  background-color: #df0024;
 }
