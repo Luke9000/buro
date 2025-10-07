@@ -9,14 +9,14 @@ type HorizontalTextImageProps = {
   children: ReactNode;
   className?: string;
   src: string | StaticImageData;
-  alt:string;
+  alt: string;
 };
 
 export function HorizontalTextImage({
   children,
   className,
   src,
-  alt
+  alt,
 }: HorizontalTextImageProps) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -40,17 +40,17 @@ export function HorizontalTextImage({
     <article
       ref={ref}
       className={clsx(
-        "z-20 flex border-t border-b -mx-4 md:-mx-8 items-center h-fit lg:min-h-64 xl:min-h-108 overflow-hidden relative",
+        " flex border-t border-b -mx-4 md:-mx-8 items-center h-fit lg:min-h-64 xl:min-h-108 overflow-hidden relative",
         className
       )}
     >
-      <div className=" px-8 py-12 lg:px-16 z-10 relative w-4/5 lg:w-1/2">
+      <div className=" px-8 py-12 lg:px-16  relative w-4/5 lg:w-1/2">
         {children}
       </div>
 
       <motion.div
         style={{ clipPath }}
-        className="absolute right-0 top-0 h-full lg:w-3/4 w-2/5 overflow-hidden z-10"
+        className="absolute right-0 top-0 h-full lg:w-3/4 w-2/5 overflow-hidden"
       >
         <motion.div style={{ y }} className="relative scale-120 h-full w-full">
           <Image

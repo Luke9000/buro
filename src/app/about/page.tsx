@@ -9,7 +9,7 @@ import { v4 as uuid } from "uuid";
 export const metadata: Metadata = {
   title: "О компании",
   description:
-    "Структуре и внутреннее устройство компании",
+    "Структура и внутреннее устройство компании",
 };
 
 const aboutData = [
