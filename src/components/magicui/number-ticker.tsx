@@ -1,7 +1,7 @@
 "use client";
 
 import { useInView, useMotionValue, useSpring } from "motion/react";
-import { ComponentPropsWithoutRef, useEffect, useRef } from "react";
+import { ComponentPropsWithoutRef, useEffect, useMemo, useRef } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -24,10 +24,22 @@ export function NumberTicker({
 }: NumberTickerProps) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(direction === "down" ? value : startValue);
-  const springValue = useSpring(motionValue, {
-    damping: 60,
-    stiffness: 100,
-  });
+
+  const springConfig = useMemo(() => {
+    const diff = Math.abs(value - startValue);
+
+    let damping = 45;
+    let stiffness = 100;
+
+    if (diff > 50000) {
+      damping = 25;
+      stiffness = 150;
+    }
+
+    return { stiffness, damping };
+  }, [value, startValue]);
+
+  const springValue = useSpring(motionValue, springConfig);
   const isInView = useInView(ref, { once: true, margin: "0px" });
 
   useEffect(() => {
@@ -49,7 +61,7 @@ export function NumberTicker({
           }).format(Number(latest.toFixed(decimalPlaces)));
         }
       }),
-    [springValue, decimalPlaces],
+    [springValue, decimalPlaces]
   );
 
   return (
@@ -57,7 +69,7 @@ export function NumberTicker({
       ref={ref}
       className={cn(
         "inline-block tabular-nums tracking-wider text-black dark:text-white",
-        className,
+        className
       )}
       {...props}
     >
