@@ -108,7 +108,7 @@ const page = () => {
       </section>
 
       <SlideIn className="my-12" direction="right">
-        <h1 className="mb-20 font-semibold text-5xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
+        <h1 className="mb-20 font-normal text-4xl first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
           Структура
         </h1>
         <section className="flex flex-col gap-20 px-6 md:px-16 2xl:px-52">

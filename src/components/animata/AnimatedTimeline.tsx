@@ -87,7 +87,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           transition={{ duration: 0.3, ease: "easeOut" }}
         ></motion.div> */}
           <HexNut
-            className="z-10"
+            className=""
             size={styles.dotSize}
             isActive={isActive}
             dotColor={styles.dotColor}
@@ -165,7 +165,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             transition={{ duration: 0.3, ease: "easeOut" }}
           /> */}
           <HexNut
-            className="z-10"
+            className=""
             size={styles.dotSize}
             isActive={isActive}
             dotColor={styles.dotColor}

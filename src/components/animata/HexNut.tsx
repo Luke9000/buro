@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import React from "react";
 
 type HexNutSVGProps = {
-  size?: string; // e.g. "24px" or "1.5rem"
+  size?: string; // "24px"  "1.5rem"
   isActive: boolean;
   dotColor: string;        // цвет обода/заливки когда НЕ активен
   activeDotColor: string;  // цвет обода/заливки когда активен

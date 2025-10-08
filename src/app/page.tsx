@@ -304,7 +304,7 @@ export default function Home() {
       </section>
 
       <SlideIn direction="right">
-        <h1 className="mb-20 font-semibold text-5xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
+        <h1 className="mb-20 font-normal text-4xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
           Бюро в цифрах
         </h1>
         <section className="flex flex-col gap-10">
@@ -333,7 +333,7 @@ export default function Home() {
       </SlideIn>
 
       <SlideIn direction="right">
-        <h1 className=" mb-20 font-semibold text-5xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
+        <h1 className=" mb-20 font-normal text-4xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
           Состав работ
         </h1>
         <section className="flex flex-col -mx-8 ">
@@ -361,7 +361,7 @@ export default function Home() {
       </SlideIn>
 
       <SlideIn direction="left">
-        <h1 className=" mb-20 font-semibold text-5xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
+        <h1 className=" mb-20 font-normal text-4xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
           План развития
         </h1>
         <AnimatedTimeline events={Roadmap}></AnimatedTimeline>
@@ -369,7 +369,7 @@ export default function Home() {
 
       <div id="about" className="flex flex-col">
         <SlideIn className="" direction="left">
-          <h1 className=" mb-20 font-semibold text-5xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
+          <h1 className=" mb-20 font-normal text-4xl  first-letter:inline-flex first-letter:items-center first-letter:justify-center first-letter:w-12 first-letter:h-1 first-letter:bg-accent-higher first-letter:text-white">
             Миссия и ценности
           </h1>
           <SlideIn className="mb-12 flex sm:justify-center items-center ">
@@ -382,7 +382,7 @@ export default function Home() {
                 mass: 0.8,
               }}
               interval={10}
-              className="sm:w-1/2"
+              className="sm:w-1/2 font-medium"
             >
               <p>
                 Мы участвуем в социальной функции государства, разрабатывая{" "}
