@@ -1,5 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="147" height="128"><svg width="147" height="128" viewBox="0 0 147 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_432_870)">
 <path d="M1.07735 65C0.720082 64.3812 0.720082 63.6188 1.07735 63L36.4226 1.78015C36.7799 1.16135 37.4402 0.78015 38.1547 0.78015L108.845 0.780147C109.56 0.780147 110.22 1.16134 110.577 1.78015L145.923 63C146.28 63.6188 146.28 64.3812 145.923 65L110.577 126.22C110.22 126.839 109.56 127.22 108.845 127.22L38.1547 127.22C37.4402 127.22 36.7799 126.839 36.4226 126.22L1.07735 65Z" fill="#DF0024"></path>
+</g>
+<defs>
+<clipPath id="SvgjsClipPath1016">
+<rect width="146" height="128" fill="white" transform="translate(0.5)"></rect>
+</clipPath>
+</defs>
 </svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
 @media (prefers-color-scheme: dark) { :root { filter: none; } }
 </style></svg>
