@@ -19,7 +19,7 @@ const data = [
   {
     title: "ПЕШКОМ",
     children: [
-      <b className="font-medium">
+      <b key="id-1" className="font-medium">
         При себе необходимо иметь документ, удостоверяющий личность (паспорт или
         права).
       </b>,
