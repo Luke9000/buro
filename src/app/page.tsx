@@ -16,6 +16,7 @@ import { ValuesBlock } from "@/components/ValuesBlock";
 import { Link } from "next-view-transitions";
 import { ParallaxImage } from "@/components/ParralaxImage";
 import Logo from "@/components/icons/Logo";
+import { ScrollReactive } from "@/components/ScrollReactive";
 
 const Projects = [
   {
@@ -221,7 +222,7 @@ const Values = [
     key: uuid(),
     title: "САМОМОТИВАЦИЯ",
     text: "Основой в совместной работе является внутренняя энергия сотрудников. Руководители компании подают личный пример и создают условия для самореализации.",
-    highlightTitle: "",
+    highlightTitle: "МОТИВАЦИЯ",
     highlightText: "",
   },
   {
@@ -252,7 +253,7 @@ export default function Home() {
     <div className="flex flex-col gap-24">
       <section className="min-h-[95vh] h-fit  flex flex-col justify-center align-center md:items-center relative mt-12 md:mt-0 -mb-22">
         {/* -mt-[13vh] */}
-        <div className="absolute w-full h-fit flex justify-center align-middle items-center">
+        {/* <div className="absolute w-full h-fit flex justify-center align-middle items-center">
           <Image
             unoptimized
             width={1400}
@@ -261,7 +262,17 @@ export default function Home() {
             alt="rf map"
             src={rf}
           ></Image>
-        </div>
+        </div> */}
+        <ScrollReactive className="mb-10 scale-110 -z-10 hidden sm:block">
+          <Image
+            unoptimized
+            width={2200}
+            height={720}
+            className={` object-contain opacity-10`}
+            alt="rf map"
+            src={rf}
+          ></Image>
+        </ScrollReactive>
         <div className="w-48 mb-15">
           <Logo></Logo>
         </div>
@@ -353,7 +364,7 @@ export default function Home() {
                 >
                   
                 </div> */}
-                <span className="text-contrast-high">{stage.id}</span>
+                <span className="text-contrast-low">{stage.id}</span>
               </div>
             </SlideIn>
           ))}

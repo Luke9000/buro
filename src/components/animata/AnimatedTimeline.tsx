@@ -64,9 +64,10 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           "md:hidden relative mr-4 flex flex-col items-center min-h-22"
         )}
       >
+        {/* Основная вертикальная линия */}
         <div
           className={`absolute ${
-            isLast ? " hidden" : "block"
+            isLast ? "hidden" : "block"
           } bottom-0 top-0 w-0.5 -z-10`}
           style={{ backgroundColor: styles.lineColor }}
         >
@@ -77,23 +78,56 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             style={{ height: "100%", backgroundColor: styles.activeLineColor }}
           />
         </div>
-        {/* <motion.div
-          className="relative z-0 rounded-full border-4 bg-background"
-          style={{ width: styles.dotSize, height: styles.dotSize }}
-          animate={{
-            borderColor: isActive ? styles.activeDotColor : styles.dotColor,
-            backgroundColor: isActive ? styles.activeDotColor : "background",
-          }}
-          transition={{ duration: 0.3, ease: "easeOut" }}
-        ></motion.div> */}
+
+        {/* Хекснут */}
+        <div className="relative flex flex-col items-center">
           <HexNut
-            className=""
             size={styles.dotSize}
             isActive={isActive}
             dotColor={styles.dotColor}
             activeDotColor={styles.activeDotColor}
           />
-      </div>
+          {/* Пунктир*/}
+          {isLast && (
+            <div
+              className="absolute top-full w-0.5 h-32"
+              style={{
+                backgroundImage: `repeating-linear-gradient(
+            to bottom,
+            ${styles.lineColor} 0,
+            ${styles.lineColor} 6px,
+            transparent 6px,
+            transparent 12px
+          )`,
+                maskImage:
+                  "linear-gradient(to bottom, black 70%, transparent 100%)",
+                WebkitMaskImage:
+                  "linear-gradient(to bottom, black 70%, transparent 100%)",
+                opacity: 0.6,
+              }}
+            >
+              <motion.div
+                className="absolute top-0 left-0 w-full"
+                animate={{ height: isActive ? "100%" : "0%" }}
+                transition={{ duration: 0.5, ease: "easeInOut" }}
+                style={{
+                  backgroundImage: `repeating-linear-gradient(
+              to bottom,
+              ${styles.activeLineColor} 0,
+              ${styles.activeLineColor} 6px,
+              transparent 6px,
+              transparent 12px
+            )`,
+                  maskImage:
+                    "linear-gradient(to bottom, black 70%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 70%, transparent 100%)",
+                }}
+              />
+            </div>
+          )}
+                </div>
+        </div>
 
       <div
         className="md:hidden w-fit leading-5 -mt-1"
@@ -135,9 +169,10 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
 
         {/* Центральная линия и точка */}
         <div className="relative flex flex-col items-center min-h-full">
+          {/* Вертикальная линия между элементами */}
           <div
             className={`absolute ${
-              isLast ? "hidden " : "block"
+              isLast ? "hidden" : "block"
             } top-0 w-0.5 -z-10`}
             style={{
               backgroundColor: styles.lineColor,
@@ -155,22 +190,55 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
             />
           </div>
 
-          {/* <motion.div
-            className="relative z-10 rounded-full border-4 bg-background"
-            style={{ width: styles.dotSize, height: styles.dotSize }}
-            animate={{
-              borderColor: isActive ? styles.activeDotColor : styles.dotColor,
-              backgroundColor: isActive ? styles.activeDotColor : "background",
-            }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-          /> */}
-          <HexNut
-            className=""
-            size={styles.dotSize}
-            isActive={isActive}
-            dotColor={styles.dotColor}
-            activeDotColor={styles.activeDotColor}
-          />
+          
+          <div className="relative flex flex-col items-center">
+            <HexNut
+              size={styles.dotSize}
+              isActive={isActive}
+              dotColor={styles.dotColor}
+              activeDotColor={styles.activeDotColor}
+            />
+
+            {/* Пунктирная линия*/}
+            {isLast && (
+              <div
+                className="absolute top-full w-0.5 h-32"
+                style={{
+                  backgroundImage: `repeating-linear-gradient(
+            to bottom,
+            ${styles.lineColor} 0,
+            ${styles.lineColor} 6px,
+            transparent 6px,
+            transparent 12px
+          )`,
+                  maskImage:
+                    "linear-gradient(to bottom, black 70%, transparent 100%)",
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, black 70%, transparent 100%)",
+                  opacity: 0.6,
+                }}
+              >
+                <motion.div
+                  className="absolute top-0 left-0 w-full"
+                  animate={{ height: isActive ? "100%" : "0%" }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  style={{
+                    backgroundImage: `repeating-linear-gradient(
+              to bottom,
+              ${styles.activeLineColor} 0,
+              ${styles.activeLineColor} 6px,
+              transparent 6px,
+              transparent 12px
+            )`,
+                    maskImage:
+                      "linear-gradient(to bottom, black 70%, transparent 100%)",
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, black 70%, transparent 100%)",
+                  }}
+                />
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Правая сторона */}
