@@ -1,15 +1,14 @@
 "use client";
 
 import clsx from "clsx";
-import {Link} from "next-view-transitions";
+import { Link } from "next-view-transitions";
 import { usePathname } from "next/navigation";
-import Logo from "../icons/Logo";
 // import Account from "./Account";
 import Hamburger from "./Hamburger/index";
 import links from "./links";
 
-import Headroom from "react-headroom";
 import { cn } from "@/lib/utils";
+import Headroom from "react-headroom";
 
 const Index = () => {
   const path = usePathname();
@@ -17,7 +16,7 @@ const Index = () => {
   return (
     <Headroom>
       <header className="bg-[var(--color-bg)] z-50 w-full flex-row  items-center no-underline flex h-15 px-4 md:px-8 py-0 left-0 justify-between ">
-        <Link
+        {/* <Link
           href="/"
           // className={clsx(
           //   "flex justify-center items-center gap-[var(--spacing-xs)] stroke-[color:var(--color-contrast-medium)] text-[color:var(--color-contrast-medium)]",
@@ -28,6 +27,15 @@ const Index = () => {
           // )}
         >
           <Logo className="w-[7rem] lg:w-[6rem] md:w-[6rem]"></Logo>
+        </Link> */}
+        <Link
+          href="/"
+          className={cn(
+            "text-xs/2.5 font-medium text-contrast-medium",
+            path === "/" && "text-accent-higher"
+          )}
+        >
+          ГЛАВНАЯ
         </Link>
 
         <nav className="hidden gap-8 lg:flex flex-row justify-end items-center no-underline w-full divide-x-2 divide-accent-higher">
@@ -45,7 +53,14 @@ const Index = () => {
                 )}
               >
                 {/* <LinkIcon className={link.name !== "" ? "stroke-1" : ""} /> */}
-                <span className={cn("text-xs/2.5 font-medium",  path === link.href && "text-accent-higher")}>{link.name}</span>
+                <span
+                  className={cn(
+                    "text-xs/2.5 font-medium",
+                    path === link.href && "text-accent-higher"
+                  )}
+                >
+                  {link.name}
+                </span>
               </Link>
             );
           })}

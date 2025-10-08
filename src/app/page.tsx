@@ -15,6 +15,7 @@ import React from "react";
 import { ValuesBlock } from "@/components/ValuesBlock";
 import { Link } from "next-view-transitions";
 import { ParallaxImage } from "@/components/ParralaxImage";
+import Logo from "@/components/icons/Logo";
 
 const Projects = [
   {
@@ -249,19 +250,22 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <div className="flex flex-col gap-24">
-      <section className="min-h-[95vh] h-fit  flex flex-col justify-center align-center md:items-center relative mt-12 md:mt-0 -mb-24">
+      <section className="min-h-[95vh] h-fit  flex flex-col justify-center align-center md:items-center relative mt-12 md:mt-0 -mb-22">
         {/* -mt-[13vh] */}
         <div className="absolute w-full h-fit flex justify-center align-middle items-center">
           <Image
             unoptimized
-            width={1200}
+            width={1400}
             height={720}
             className={` object-contain opacity-10`}
             alt="rf map"
             src={rf}
           ></Image>
         </div>
-        <div className="flex flex-col justify-between w-fit gap-2 align-center ">
+        <div className="w-48 mb-15">
+          <Logo></Logo>
+        </div>
+        <div className="flex flex-col justify-between w-fit gap-2 align-center">
           <div className="flex items-end gap-3">
             <h1 className="w-fit text-8xl/19 font-semibold text-accent-higher">
               10
@@ -272,7 +276,7 @@ export default function Home() {
             мы&nbsp;проектируем объекты жилой и&nbsp;социальной инфраструктуры
           </p>
         </div>
-        <ul className="px-4 md:px-0 text-xs font-normal text-contrast-higher list-disc list-outside mt-22 flex flex-col md:flex-row gap-5 md:gap-7  marker:text-accent-higher">
+        <ul className="px-4 md:px-0 text-xs font-normal text-contrast-higher list-disc list-outside mb-15 mt-22 flex flex-col md:flex-row gap-5 md:gap-7  marker:text-accent-higher">
           <li>Москва</li>
           <li>Россия</li>
           <li>Ближнее зарубежье</li>
@@ -309,7 +313,7 @@ export default function Home() {
               <div className="flex flex-col sm:items-center justify-between">
                 <div className="relative xxs:w-fit w-full">
                   <NumberTicker
-                    className="text-accent-higher text-6xl"
+                    className="text-accent-higher text-6xl font-semibold"
                     value={stat.figure}
                   />
                   <span className="absolute bottom-1.5 pl-1 text-contrast-medium">
@@ -336,19 +340,20 @@ export default function Home() {
           {Stages.map((stage) => (
             <SlideIn key={stage.key}>
               <div
-                className="flex items-center justify-between border-t-1 last:border-b-1 px-8 2xl:px-30 py-1"
+                className="h-22 flex items-center justify-between border-t-1 last:border-b-1 px-8 2xl:px-30 py-1"
                 key={stage.key}
               >
                 <p className="font-medium text-lg">{stage.title}</p>
-                <div
+                {/* <div
                   className="w-22 h-22 bg-accent-higher flex flex-shrink-0 items-center justify-center text-white text-5xl font-bold"
                   style={{
                     clipPath:
                       "polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)",
                   }}
                 >
-                  {stage.id}
-                </div>
+                  
+                </div> */}
+                <span className="text-contrast-high">{stage.id}</span>
               </div>
             </SlideIn>
           ))}
