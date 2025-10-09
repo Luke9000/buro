@@ -27,13 +27,13 @@ export function HorizontalTextImage({
   });
 
   // смещение картинки по Y (внутри контейнера)
-  const y = useTransform(scrollYProgress, [0, 1], ["-20%", "20%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-5%", "5%"]);
 
   // динамическая обрезка слева
   const clipPath = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    ["inset(0 0 0 25%)", "inset(0 0 0 45%)", "inset(0 0 0 25%)"]
+    ["inset(0 0 0 10%)", "inset(0 0 0 35%)", "inset(0 0 0 10%)"]
   );
 
   return (
@@ -52,7 +52,7 @@ export function HorizontalTextImage({
         style={{ clipPath }}
         className="absolute right-0 top-0 h-full lg:w-3/4 w-2/5 overflow-hidden"
       >
-        <motion.div style={{ y }} className="relative scale-120 h-full w-full">
+        <motion.div style={{ y }} className="relative scale-105 h-full w-full">
           <Image
             unoptimized
             fill
